@@ -1,2 +1,12 @@
-def main():
-    pass
+from flask import Flask
+from config import DevConfig
+
+app=Flask(__name__)
+app.config.from_object(DevConfig)
+
+app.route('/')
+def home():
+    return '<h1>Hello world</h1>'
+
+if __name__=='___main__':
+    app.run()
